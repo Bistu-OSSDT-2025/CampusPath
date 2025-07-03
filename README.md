@@ -75,4 +75,5 @@ git clone https://github.com/your-repo/your-project.git
 ## 联系信息
 如果你有任何问题或建议，请通过以下方式联系我：
 - **邮箱**：2970490563@qq.com
-- **GitHub**：
+- **GitHub**：https://github.com/Bistu-OSSDT-2025/Self-discipline
+
