@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>待办事项列表</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-tasks"></i> 待办事项列表</h1>
+            <p class="subtitle">高效管理您的日常任务</p>
+        </header>
+
+        <main class="main-content">
+            <!-- 添加任务表单 -->
+            <section class="add-task-section">
+                <div class="form-container">
+                    <h2><i class="fas fa-plus-circle"></i> 添加新任务</h2>
+                    <form id="add-task-form" class="task-form">
+                        <div class="form-group">
+                            <label for="task-title">任务标题 *</label>
+                            <input type="text" id="task-title" name="title" required placeholder="输入任务标题...">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="task-description">任务描述</label>
+                            <textarea id="task-description" name="description" placeholder="输入任务描述..."></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="task-due-date">截止日期</label>
+                                <input type="datetime-local" id="task-due-date" name="dueDate">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="task-priority">优先级</label>
+                                <select id="task-priority" name="priority">
+                                    <option value="0">低</option>
+                                    <option value="1" selected>中</option>
+                                    <option value="2">高</option>
+                                    <option value="3">紧急</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-plus"></i> 添加任务
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- 任务筛选和排序 -->
+            <section class="filter-section">
+                <div class="filter-container">
+                    <div class="filter-group">
+                        <label for="filter-status">状态筛选:</label>
+                        <select id="filter-status">
+                            <option value="all">全部</option>
+                            <option value="pending">待办</option>
+                            <option value="completed">已完成</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="filter-priority">优先级筛选:</label>
+                        <select id="filter-priority">
+                            <option value="all">全部</option>
+                            <option value="3">紧急</option>
+                            <option value="2">高</option>
+                            <option value="1">中</option>
+                            <option value="0">低</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="sort-by">排序方式:</label>
+                        <select id="sort-by">
+                            <option value="created">创建时间</option>
+                            <option value="priority">优先级</option>
+                            <option value="dueDate">截止日期</option>
+                            <option value="title">标题</option>
+                        </select>
+                    </div>
+                    
+                    <button id="clear-completed" class="btn btn-secondary">
+                        <i class="fas fa-trash"></i> 清除已完成
+                    </button>
+                </div>
+            </section>
+</body>
+</html>
+
